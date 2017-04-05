@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-21 12:04:25 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.sz.dra.pojo.News" table="news" catalog="news">
+        <id name="nid" type="java.lang.Integer">
+            <column name="NID" />
+            <generator class="identity" />
+        </id>
+        <property name="ntid" type="java.lang.Integer">
+            <column name="NTID" />
+        </property>
+        <property name="ntitle" type="java.lang.String">
+            <column name="NTITLE" length="500" />
+        </property>
+        <property name="nauthor" type="java.lang.String">
+            <column name="NAUTHOR" length="50" />
+        </property>
+        <property name="ncreatedate" type="java.util.Date">
+            <column name="NCREATEDATE" length="0" />
+        </property>
+        <property name="npicpath" type="java.lang.String">
+            <column name="NPICPATH" />
+        </property>
+        <property name="ncontent" type="java.lang.String">
+            <column name="NCONTENT" length="65535" />
+        </property>
+        <property name="nmodifydate" type="java.util.Date">
+            <column name="NMODIFYDATE" length="0" />
+        </property> 
+        <!-- <property name="upwd" type="string">
+            <column name="upwd" length="20" not-null="true" />
+        </property> -->
+        <many-to-one name="upwd" class="cn.sz.dra.pojo.NewsUsers">
+        	<column name="NID"></column>
+        	
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

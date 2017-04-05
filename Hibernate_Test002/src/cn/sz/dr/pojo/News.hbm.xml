@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-21 12:02:40 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="cn.sz.dr.pojo.News" table="news" catalog="news">
+        <id name="nid" type="java.lang.Integer">
+            <column name="NID" />
+            <generator class="identity" />
+        </id>
+        <property name="ntid" type="java.lang.Integer">
+            <column name="NTID" />
+        </property>
+        <property name="ntitle" type="string">
+            <column name="NTITLE" length="500" />
+        </property>
+        <property name="nauthor" type="string">
+            <column name="NAUTHOR" length="50" />
+        </property>
+        <property name="ncreatedate" type="timestamp">
+            <column name="NCREATEDATE" length="0" />
+        </property>
+        <property name="npicpath" type="string">
+            <column name="NPICPATH" />
+        </property>
+        <property name="ncontent" type="string">
+            <column name="NCONTENT" length="65535" />
+        </property>
+        <property name="nmodifydate" type="timestamp">
+            <column name="NMODIFYDATE" length="0" />
+        </property>
+        <property name="nsummary" type="string">
+            <column name="NSUMMARY" length="4000" />
+        </property>
+    </class>
+</hibernate-mapping>
